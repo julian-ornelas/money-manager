@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # SQL database
-.db
+*.db
