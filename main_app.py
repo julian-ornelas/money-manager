@@ -28,3 +28,10 @@ cursor.execute('''
 # Commit changes and close connection
 conn.commit()
 conn.close()
+
+def begin():
+    paycheck_existance = ("Do you get paid in a frequent manner, like paychecks? (y/n): ")
+    if paycheck_existance == "y":
+        paycheck = input("How much do you get paid per paycheck?")
+        frequency = input("How often? (weekly/biweekly/monthly)")
+        pay_date = input("When do you get paid?") # Make this into a calander date select on PyQT
