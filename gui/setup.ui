@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="60">
+   <item row="0" column="0">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="IntroName">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="nextButton">
+         <property name="text">
+          <string>Next</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="welcomeLabel">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Welcome!
+
+
+The next few pages will let you setup the program.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="AmntFreqCal">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="fullGrid">
+         <item row="0" column="0">
+          <layout class="QFormLayout" name="choicesGrid">
+           <item row="0" column="0">
+            <layout class="QFormLayout" name="recurringGrid">
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="recurringCheck">
+               <property name="text">
+                <string>Recurring deposits</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <layout class="QGridLayout" name="salaryRow">
+               <item row="0" column="0">
+                <widget class="QLabel" name="salaryLabel">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>How much?</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDoubleSpinBox" name="salaryBox"/>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <layout class="QGridLayout" name="frequencyRow">
+               <item row="0" column="0">
+                <widget class="QLabel" name="frequencyLabel">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>How often?</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="frequencyBox">
+                 <item>
+                  <property name="text">
+                   <string>Daily</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Weekly</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Biweekly</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Monthly</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Yearly</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="0">
+              <layout class="QGridLayout" name="paydayRow">
+               <item row="0" column="0">
+                <widget class="QLabel" name="paydayLabel">
+                 <property name="text">
+                  <string>When is next payday?</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDateEdit" name="paydayDateCalander">
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="noRecurringCheck">
+             <property name="text">
+              <string>No recurring deposits</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="movementButtons">
+           <item>
+            <widget class="QPushButton" name="Previous">
+             <property name="text">
+              <string>Previous</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Next">
+             <property name="text">
+              <string>Next</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>salaryBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>354</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frequencyBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>salaryLabel</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>79</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frequencyLabel</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>paydayDateCalander</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>174</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>recurringCheck</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>paydayLabel</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>107</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
